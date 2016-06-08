@@ -1,0 +1,18 @@
+{
+  "name": "getBase_e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webdriverjs": "^1.7.5",
+	"selenium-webdriver": "2.53.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
