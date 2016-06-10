@@ -37,17 +37,17 @@ describe('getBase App', function () {
 
     it('should change from "New" to "ChangedNew" Label on Lead Statuses Page', function (done) {
         SettingsPage.changeLeadStatuses(driver, 'New', 'ChangedNew');
-
+       
         driver.call(function () {
             done();
         });
     });
 
-    it('should verify that the lead created has the new status "ChangedNew"', function (done) {
-        LeadsPage.verifyLeadStatus(driver, 'John', 'M', 'ChangedNew');
-
-        driver.call(function () {
-            done();
-        });
-    });
+    // it('should verify that the lead created has the new status "ChangedNew"', function (done) {
+    //     LeadsPage.verifyLeadStatus(driver, 'John', 'M', 'ChangedNew');
+    //
+    //     driver.call(function () {
+    //         done();
+    //     });
+    // });
 });
