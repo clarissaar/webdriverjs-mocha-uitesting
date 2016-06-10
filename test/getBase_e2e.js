@@ -9,7 +9,7 @@ describe('getBase App', function () {
     var driver;
 
     before(function () {
-        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
         driver.manage().window().maximize();
 
     });
