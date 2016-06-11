@@ -8,16 +8,24 @@ describe('getBase App', function () {
     this.timeout(50000);
     var driver;
 
-    before(function () {
+    before(function (done) {
         driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
         driver.manage().window().maximize();
 
+        driver.call(function () {
+            done();
+        });
     });
 
-    // after(function () {
-    //     LeadsPage.deleteLead(driver, 'John', 'M');
-    //     driver.quit();
-    // });
+    after(function (done) {
+        LeadsPage.deleteLead(driver, 'John', 'M');
+        SettingsPage.changeLeadStatuses(driver, 'ChangedNew', 'New');
+        driver.quit();
+
+        driver.call(function () {
+            done();
+        });
+    });
 
     it('should login successfully', function (done) {
         LoginPage.login(driver, 'emailtest657@gmail.com', 'emailtest6572016');
