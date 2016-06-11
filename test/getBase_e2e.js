@@ -9,8 +9,9 @@ describe('getBase App', function () {
     var driver;
 
     before(function (done) {
-        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10 * 1000);
 
         driver.call(function () {
             done();
